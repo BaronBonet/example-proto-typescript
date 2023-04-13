@@ -26,6 +26,17 @@ example-proto-typescript-client-1         | }
 `client/client.ts` is configured for running in a docker container, for that reason the base url is set to 
 `"http://dummy_backend:8080"`, if you want to test this script locally change that to `http://localhost:38080"`
 
+You'll also need to generate the typescript stubs, from the root of this directory run:
+```shell
+npm install @bufbuild/buf @bufbuild/protoc-gen-es @bufbuild/protobuf @bufbuild/protoc-gen-connect-es @bufbuild/connect
+```
+to install the required dependencies and then run 
+```shell
+make generate-ts
+```
+to generate the stubs
+
+
 To interact with the grpc server use [grpcurl](https://github.com/fullstorydev/grpcurl)
 
 Some example commands:
