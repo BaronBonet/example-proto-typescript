@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  dummy_backend:
+    build:
+      context: ./
+      dockerfile: dummy_backend/Dockerfile
+    ports:
+      - "38080:8080"
+
+  client:
+    build:
+      context: ./
+      dockerfile: client/Dockerfile
+    depends_on:
+      - dummy_backend

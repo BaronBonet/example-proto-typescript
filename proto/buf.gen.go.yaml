@@ -1,0 +1,17 @@
+version: v1
+managed:
+  enabled: true
+  go_package_prefix:
+    default: github.com/BaronBonet/example-service
+    except:
+      - buf.build/googleapis/googleapis
+
+plugins:
+  - remote: buf.build/protocolbuffers/plugins/go
+    out: dummy_backend/generated/go
+    opt: paths=source_relative
+
+  - remote: buf.build/grpc/plugins/go
+    out: dummy_backend/generated/go
+    opt:
+      - paths=source_relative

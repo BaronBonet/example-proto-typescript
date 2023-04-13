@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package example.v1;
+
+import "example/v1/example_domain.proto";
+
+service ExampleService {
+  rpc GetExampleMessage(example.v1.GetExampleMessageRequest) returns (example.v1.GetExampleMessageResponse);
+}
